@@ -8,3 +8,11 @@ document.querySelectorAll('.count').forEach(el=>{const to=+el.dataset.to;new Int
 const sl=document.querySelectorAll('.hero .slide');if(sl.length){let i=0;sl[0].classList.add('on');setInterval(()=>{sl[i].classList.remove('on');i=(i+1)%sl.length;sl[i].classList.add('on')},7000)}
 async function sendLead(kind,fd){const d=new URLSearchParams();d.append('kind',kind);for(const [k,v] of fd.entries())d.append(k,d.has(k)?d.get(k)+', '+v:v);try{await fetch(FORM,{method:'POST',mode:'no-cors',body:d});return true}catch(e){return false}}
 document.querySelectorAll('form.cf').forEach(f=>f.addEventListener('submit',async e=>{e.preventDefault();const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='전송 중...';const ok=await sendLead(f.dataset.kind||'케이시스템 문의',new FormData(f));alert(ok?'문의가 접수되었습니다. 확인 후 연락드리겠습니다.':'전송에 실패했습니다. 전화로 문의해 주세요.');if(ok)f.reset();b.disabled=false;b.textContent='문의 보내기'}));
+
+(function(){const KEY='ks-view';const vt=document.createElement('div');vt.className='vt';vt.innerHTML='<button data-v="pc">PC 버전</button><button data-v="m">모바일 버전</button>';document.body.appendChild(vt);
+const meta=document.querySelector('meta[name=viewport]');const isPhone=matchMedia('(max-width:820px)').matches;
+function apply(v,save){if(save)localStorage.setItem(KEY,v);vt.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+ if(v==='pc'){document.documentElement.classList.remove('m-mode');if(isPhone)meta.setAttribute('content','width=1280');}
+ else{if(isPhone){meta.setAttribute('content','width=device-width,initial-scale=1');document.documentElement.classList.remove('m-mode')}else{document.documentElement.classList.add('m-mode')}}}
+let v=localStorage.getItem(KEY)||(isPhone?'m':'pc');apply(v,false);
+vt.addEventListener('click',e=>{const b=e.target.closest('button');if(b)apply(b.dataset.v,true)});})();
