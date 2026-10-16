@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>취급품목 | 케이시스템</title><meta name="description" content="정밀연삭 볼스크류, LM가이드, 전조 볼스크류, TM스크류, TM너트, 커플링, 미니츄어 가이드, 볼부쉬 서포트 유니트, 연마봉 등 자동화 부품 · 대체품 선정 전문업체">
+<meta property="og:title" content="취급품목 | 케이시스템"><meta property="og:description" content="정밀연삭 볼스크류, LM가이드, 전조 볼스크류, TM스크류, TM너트, 커플링, 미니츄어 가이드, 볼부쉬 서포트 유니트, 연마봉 등 자동화 부품 · 대체품 선정 "><meta property="og:image" content="img/">
+<link rel="icon" href="img/logo.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="hd " id="hd"><div class="wrap">
+<a class="logo" href="index.html"><img src="img/logo.png" alt="케이시스템"><span>케이시스템</span></a>
+<nav class="nav"><a href="index.html" class="">홈</a><a href="about.html" class="">회사소개</a><a href="products.html" class="on">취급품목</a><a href="catalog.html" class="">제품자료</a><a href="brands.html" class="">취급브랜드</a><a href="contact.html" class="">고객센터</a><a href="landing/index.html" class="">제품 라인업</a></nav>
+<a class="tel" href="tel:0220384989">☎ 02-2038-4989</a>
+<button class="burger" id="burger" aria-label="메뉴"><span></span><span></span><span></span></button>
+</div></header><div class="mnav" id="mnav"><a href="index.html">홈</a><a href="about.html">회사소개</a><a href="products.html">취급품목</a><a href="catalog.html">제품자료</a><a href="brands.html">취급브랜드</a><a href="contact.html">고객센터</a><a href="landing/index.html">제품 라인업</a><a class="tel" href="tel:0220384989">☎ 02-2038-4989</a></div>
+
+<section class="sec" style="padding-top:150px"><div class="wrap"><div class="reveal"><p class="eyebrow">PRODUCTS</p><h2 class="t">취급품목</h2><p class="sub">473개 품목 · 세부 카테고리로 좁혀 보고, 카드를 누르면 사양과 사진을 볼 수 있습니다. 단가는 문의 주세요.</p></div>
+<div class="tabs" id="tabs" style="margin-top:34px"></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px"><input class="search" id="q" placeholder="품명 · 규격 · 브랜드 검색 (예: 6204, NSK, SBR)"><span id="cnt" style="color:var(--muted);font-size:14px"></span></div>
+<div class="chips" id="cats" style="margin-top:14px"></div>
+<div class="grid g4" id="grid" style="margin-top:26px"></div></div></section>
+<div class="modal" id="modal"><div class="box"><button class="x" id="mx">×</button><div class="mb"><div id="mimg"></div><div><h3 id="mt"></h3><span class="cat" id="mc"></span><pre id="mbody"></pre><div class="ask"><a class="btn p" href="tel:01076732024">📞 단가 문의 010-7673-2024</a><a class="btn d" id="mask" href="contact.html">온라인 문의</a></div></div></div></div></div>
+<footer class="ft"><div class="wrap">
+<div><b>케이시스템</b><p>서울시 구로구 경인로 51길 122 (케이시스템)<br>대표 강승훈 · 직통 010-7673-2024<br>TEL 02-2038-4989 · FAX 02-2038-4909<br>이메일 tmdgns4755@naver.com</p><small>Copyright © 케이시스템. All Rights Reserved.</small></div>
+<div><b>취급품목</b><p>취급품목 · 볼스크류 · 회전베어링 · 체인 · 리니어부싱 · DU/오일레스 · 유니트베어링 · 연마봉<br>사각키 · 스냅링/와샤 · 강구 · 정밀급베어링 · 파워록/커플링 · 로드엔드 · 그리스 · 공구/포장</p></div>
+<div><b>협력업체</b><p>㈜영진비앤비 — SMC 공업 전문취급<br>UP TECH — 가공 전문<br>BSQ — 특주가공 전문 · A/S 전문업체</p></div>
+</div></footer>
+<div class="qb" id="qb"><div class="in"><p><b>견적·재고·대체품 문의</b><span>단가는 문의 주시면 당일 안내 · 평일 09~18시</span></p><a class="tel pulse" href="tel:01076732024">📞 010-7673-2024</a></div></div>
+<script>const FORM="https://script.google.com/macros/s/AKfycbygbGhdoOe00aZZCDmmIaSWKSTVaJGdADddKR-nQl7-An9D__LU6LUQIAVZ5HWdPOM/exec";</script><script src="site.js"></script><script src="products-data.js"></script><script>
+const T=document.getElementById('tabs'),C=document.getElementById('cats'),G=document.getElementById('grid'),Q=document.getElementById('q'),CNT=document.getElementById('cnt');
+let bi=0,cat='',q='';
+function render(){const b=PRODUCTS[bi];T.innerHTML=PRODUCTS.map((x,i)=>`<button class="chip ${i===bi?'on':''}" data-i="${i}">${x.label} <small>${x.items.length}</small></button>`).join('');
+C.innerHTML=b.cats.length?[`<button class="chip ${cat===''?'on':''}" data-c="">전체</button>`,...b.cats.map(c=>`<button class="chip ${cat===c?'on':''}" data-c="${c}">${c}</button>`)].join(''):'';
+const list=b.items.filter(it=>(!cat||it.c===cat)&&(!q||(it.t+' '+it.c+' '+it.b).toLowerCase().includes(q)));CNT.textContent=`${list.length}개`;
+G.innerHTML=list.length?list.map((it,i)=>`<div class="card" data-i="${b.items.indexOf(it)}"><div class="ph"><img src="img/${it.i}" alt="${it.t}" loading="lazy"></div><div class="bd"><b>${it.t}</b><small>${it.c||b.label}</small><span class="n">단가 문의 →</span></div></div>`).join(''):'<div class="empty">검색 결과가 없습니다. 전화로 문의해 주세요.</div>';
+location.hash=b.code}
+T.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(!b)return;bi=+b.dataset.i;cat='';render()});
+C.addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(!b)return;cat=b.dataset.c;render()});
+Q.addEventListener('input',()=>{q=Q.value.trim().toLowerCase();render()});
+G.addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=PRODUCTS[bi].items[+c.dataset.i];document.getElementById('mt').textContent=it.t;document.getElementById('mc').textContent=it.c||PRODUCTS[bi].label;document.getElementById('mbody').textContent=it.b||'상세 사양은 전화·온라인 문의로 안내드립니다.';document.getElementById('mimg').innerHTML=(it.f.length?it.f:[it.i]).map(x=>`<img src="img/${x}" alt="">`).join('');document.getElementById('mask').href='contact.html?item='+encodeURIComponent(it.t);document.getElementById('modal').classList.add('open')});
+document.getElementById('mx').onclick=()=>document.getElementById('modal').classList.remove('open');document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')e.target.classList.remove('open')});
+const h=location.hash.slice(1);const hi=PRODUCTS.findIndex(x=>x.code===h);if(hi>=0)bi=hi;render();
+</script></body></html>
